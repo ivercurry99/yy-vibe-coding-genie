@@ -1,4 +1,4 @@
-"""everyone-can-projects · 项目脚手架与校验工具
+"""yy-vibe-coding-genie · 项目脚手架与校验工具
 
 用途：
     1. 从零把一句粗糙想法，变成"7 份立项文档 + phases/ 目录 + PROGRESS.md"的标准工程布局。
@@ -545,7 +545,7 @@ def _cmd_capabilities(_: argparse.Namespace) -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(prog="scaffold_project", description="everyone-can-projects · 脚手架 + 校验")
+    p = argparse.ArgumentParser(prog="scaffold_project", description="yy-vibe-coding-genie · 脚手架 + 校验")
     sub = p.add_subparsers(dest="cmd", required=True)
 
     s = sub.add_parser("scaffold", help="从一句提示词创建标准工程布局")

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" role="img" aria-labelledby="ecpTitle ecpDesc">
-  <title id="ecpTitle">everyone-can-projects 一条命令生成完整项目骨架</title>
+  <title id="ecpTitle">yy-vibe-coding-genie 一条命令生成完整项目骨架</title>
   <desc id="ecpDesc">终端窗口显示 scaffold 命令创建 12 个文件，validate 命令 5 项检查全部通过，右侧为生成的目录结构。</desc>
 
   <style>
@@ -11,7 +11,7 @@
   <rect x="0" y="0" width="1200" height="500" rx="16" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
 
   <!-- 标题 + 光标 -->
-  <text x="52" y="80" class="sans" font-size="40" font-weight="700" fill="#e6edf3">everyone-can-projects</text>
+  <text x="52" y="80" class="sans" font-size="40" font-weight="700" fill="#e6edf3">yy-vibe-coding-genie</text>
   <rect x="556" y="48" width="22" height="42" rx="3" fill="#3fb950"/>
   <text x="52" y="120" class="sans" font-size="23" fill="#8b949e">输入一段需求说明，生成带立项文档、门禁检查和进度记录的项目目录</text>
 

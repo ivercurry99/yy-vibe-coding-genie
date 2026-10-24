@@ -1,4 +1,4 @@
-"""Unit tests for everyone-can-projects — pure logic, no real APIs, no external hosts.
+"""Unit tests for yy-vibe-coding-genie — pure logic, no real APIs, no external hosts.
 
 Run:
     pytest tests/ -v --cov=scripts --cov-report=term-missing --cov-fail-under=70

@@ -1,11 +1,11 @@
-# everyone-can-projects
+# yy-vibe-coding-genie
 
 <p align="center">
   <img src="assets/readme/hero.svg" width="900" alt="终端窗口：scaffold 命令创建 12 个文件，validate 命令 5 项检查全部通过，右侧为生成的目录结构">
 </p>
 
 <p align="center">
-  <a href="https://github.com/ivercurry99/everyone-can-projects/actions/workflows/ci.yml"><img src="https://github.com/ivercurry99/everyone-can-projects/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/ivercurry99/yy-vibe-coding-genie/actions/workflows/ci.yml"><img src="https://github.com/ivercurry99/yy-vibe-coding-genie/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <img src="https://img.shields.io/badge/python-3.10%2B-blue" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">
   <img src="https://img.shields.io/badge/platform-win%20%7C%20mac%20%7C%20linux-lightgrey" alt="跨平台">
@@ -74,8 +74,8 @@ $ python scripts/scaffold_project.py validate ../workspace/my-site
 ### 方式 A · 命令行（不需要 Agent）
 
 ```bash
-git clone https://github.com/ivercurry99/everyone-can-projects.git
-cd everyone-can-projects
+git clone https://github.com/ivercurry99/yy-vibe-coding-genie.git
+cd yy-vibe-coding-genie
 python scripts/scaffold_project.py scaffold \
   --name "my-personal-site" \
   --brief "做个人网站，作为别人了解我的入口" \
@@ -87,7 +87,7 @@ python scripts/scaffold_project.py validate ../workspace/my-personal-site
 ### 方式 B · 装进编程助手
 
 ```text
-帮我安装「https://github.com/ivercurry99/everyone-can-projects」这个技能。
+帮我安装「https://github.com/ivercurry99/yy-vibe-coding-genie」这个技能。
 ```
 
 ### 方式 C · 不装技能

@@ -118,14 +118,9 @@ python scripts/scaffold_project.py validate ../workspace/my-personal-site
 
 完整适配矩阵与常见故障修复见 [references/model-agent-matrix.md](references/model-agent-matrix.md)，降级细节见 [references/fallback-strategy.md](references/fallback-strategy.md)。
 
-## 测试与 CI
+## 质量保障
 
-36 个单元测试，覆盖率 94%。CI 在 Python 3.10 / 3.11 / 3.12 上运行，覆盖语法检查、脚手架冒烟、幂等性检查和覆盖率门槛，守住 9 条回归红线（R1~R9）：
-
-```bash
-pip install -r requirements.txt   # 只有 pytest + pytest-cov
-pytest tests/ -v --cov=scripts --cov-fail-under=70
-```
+36 个单元测试，覆盖率 94%，CI 在 Python 3.10 / 3.11 / 3.12 上自动运行（语法检查、脚手架冒烟、幂等性、覆盖率门槛）。顶部 CI 徽章绿即表示当前版本通过全部检查。
 
 ## 文档索引
 

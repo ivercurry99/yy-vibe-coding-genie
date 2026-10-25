@@ -57,6 +57,16 @@ $ python scripts/scaffold_project.py validate ../workspace/my-site
 
 ## 工作方式
 
+**先聊清需求，再写代码。** 阶段 0 默认在计划模式下进行，不动手实施：
+
+1. 进入计划模式，说明「需求确认后才开始写」
+2. 主动调用 `brainstorming` 或 `grill me` 技能澄清需求；宿主没有就**先安装**（`npx skills add obra/superpowers`）再调用
+3. 按核心模块在 GitHub 检索 2-3 个可复用开源项目，结果写进技术选型文档的「复用参考」节
+4. 输出《需求确认单》：目标用户、核心价值、功能边界、风格偏好
+5. 用户确认后退出计划模式，进入实施
+
+澄清技能实在装不上、或宿主没有网络能力时，会明确写出降级声明，不会静默跳过。
+
 立项 → 骨架 → 迭代。每个功能过五道门禁：
 
 | 闸 | 谁查 | 查什么 |
@@ -102,9 +112,9 @@ python scripts/scaffold_project.py validate ../workspace/my-personal-site
 |---|---|
 | 子智能体 | 单人按角色串行切换，门禁一项不少 |
 | 宿主记忆系统 | 用 PROGRESS.md 作为唯一事实来源 |
-| superpowers 头脑风暴技能 | 等价的开放式提问 |
+| superpowers 头脑风暴 / grill me 技能 | 先安装再调用；装不上才改用等价开放式提问，并声明原因 |
 | 去 AI 味技能 | 按 6 项 checklist 逐条人工检查 |
-| 联网能力 | 跳过 GitHub 开源复用，按本地常识选型 |
+| 联网能力 | 无法做 GitHub 调研时声明「选型基于本地常识，需人工核对」 |
 
 完整适配矩阵与常见故障修复见 [references/model-agent-matrix.md](references/model-agent-matrix.md)，降级细节见 [references/fallback-strategy.md](references/fallback-strategy.md)。
 

@@ -57,6 +57,10 @@ $ python scripts/scaffold_project.py validate ../workspace/my-site
 
 ## 工作方式
 
+不是每个请求都走全流程：改文案、调样式这类小改动，说明改法后直接改、跑一次相关快测就完事；新项目和正经功能才走完整七阶段。小改动做到一半碰到高风险逻辑（数据、鉴权、支付、删文件）会自动升级走全流程。
+
+主技能是一张导航表：七个阶段各配一个子技能文档，做到哪一阶段才读哪一份，不全量加载——弱模型读得动，token 也省。
+
 **先聊清需求，再写代码。** 阶段 0 默认在计划模式下进行，不动手实施：
 
 1. 进入计划模式，说明「需求确认后才开始写」
@@ -126,14 +130,16 @@ python scripts/scaffold_project.py validate ../workspace/my-personal-site
 
 | 文档 | 内容 |
 |---|---|
-| [SKILL.md](./SKILL.md) | 技能本体：定位、流程、鲁棒性规则 |
-| [references/harness.md](references/harness.md) | 五角色 / 五道门禁 / 文件交接 / 发版评审 |
+| [SKILL.md](./SKILL.md) | 技能本体：定位、任务分级、阶段导航、衔接表、鲁棒性规则 |
+| [references/clarify.md](references/clarify.md) | 阶段 0 子技能：计划模式需求澄清、brainstorming 调用、GitHub 调研、需求确认单 |
+| [references/harness.md](references/harness.md) | 五角色 / 五道门禁 / 文件交接 / 测试节奏 / 修 bug 路径 / 发版评审 |
 | [references/memory.md](references/memory.md) | 进度记忆纪律：同步、恢复、压缩 |
-| [references/development-principles.md](references/development-principles.md) | 开发思维：开源复用、版本管理、部署 |
-| [references/fallback-strategy.md](references/fallback-strategy.md) | 能力降级策略与去 AI 味 checklist |
+| [references/development-principles.md](references/development-principles.md) | 开发思维：开源复用、版本管理、部署、重要操作前三问 |
+| [references/polish.md](references/polish.md) | 阶段 4 子技能：去 AI 味 6 项检查清单与打磨原则 |
+| [references/fallback-strategy.md](references/fallback-strategy.md) | 能力降级策略 |
 | [references/prompt-engineering.md](references/prompt-engineering.md) | 各阶段结构化 Prompt 模板 |
 | [references/model-agent-matrix.md](references/model-agent-matrix.md) | 模型档位适配矩阵 + 回归红线 + 故障修复 |
-| [evals/evals.json](evals/evals.json) | 4 条核心评估用例 |
+| [evals/evals.json](evals/evals.json) | 5 条核心评估用例 |
 
 ## License
 

@@ -57,8 +57,6 @@ $ python scripts/scaffold_project.py validate ../workspace/my-site
 
 ## 工作方式
 
-不是每个请求都走全流程：改文案、调样式这类小改动，说明改法后直接改、跑一次相关快测就完事；新项目和正经功能才走完整七阶段。小改动做到一半碰到高风险逻辑（数据、鉴权、支付、删文件）会自动升级走全流程。
-
 **先聊清需求，再写代码。** 阶段 0 默认在计划模式下进行，不动手实施：
 
 1. 进入计划模式，说明「需求确认后才开始写」
@@ -116,7 +114,6 @@ python scripts/scaffold_project.py validate ../workspace/my-personal-site
 | 宿主记忆系统 | 用 PROGRESS.md 作为唯一事实来源 |
 | superpowers 头脑风暴 / grill me 技能 | 先安装再调用；装不上才改用等价开放式提问，并声明原因 |
 | 去 AI 味技能 | 按 6 项 checklist 逐条人工检查 |
-| oil-dev-skills 系列（修缺陷 / 审查 / 委托 / 探索 / 治理） | 命中场景时优先调用；未装则走内置等价流程（先复现修根因、git diff 越界对照、单人串行），并声明原因 |
 | 联网能力 | 无法做 GitHub 调研时声明「选型基于本地常识，需人工核对」 |
 
 完整适配矩阵与常见故障修复见 [references/model-agent-matrix.md](references/model-agent-matrix.md)，降级细节见 [references/fallback-strategy.md](references/fallback-strategy.md)。
@@ -136,7 +133,7 @@ python scripts/scaffold_project.py validate ../workspace/my-personal-site
 | [references/fallback-strategy.md](references/fallback-strategy.md) | 能力降级策略与去 AI 味 checklist |
 | [references/prompt-engineering.md](references/prompt-engineering.md) | 各阶段结构化 Prompt 模板 |
 | [references/model-agent-matrix.md](references/model-agent-matrix.md) | 模型档位适配矩阵 + 回归红线 + 故障修复 |
-| [evals/evals.json](evals/evals.json) | 5 条核心评估用例 |
+| [evals/evals.json](evals/evals.json) | 4 条核心评估用例 |
 
 ## License
 

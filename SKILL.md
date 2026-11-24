@@ -2,7 +2,7 @@
 name: yy-vibe-coding-genie
 description: 帮助小白用户用一句提示词快速 vibe coding 一个完整项目。自动处理需求明确、Harness 工程规范（五角色分工、五道门禁、文件交接）、进度记忆、迭代开发、质量打磨、版本管理和部署，用户只需说"我想做什么"。当用户说"帮我做个项目/网站/App""vibe coding""我想做一个XXX"或描述了一个想做的项目但不知从何下手时使用。不要用于单个小功能修改、纯技术咨询、或已有成熟开发流程的团队协作。
 license: MIT
-version: 1.5.0
+version: 1.6.0
 author: ivercurry99
 compatibility: 核心流程只依赖「读写文件、提问、执行命令」三种通用能力，不依赖任何特定 Agent 宿主的专有功能。子智能体、记忆系统、特定技能均为可选增强，缺失时自动降级到等价方案；无论 S/A/B/C 任何模型档位都能跑出稳定结果。
 triggers:
@@ -63,7 +63,7 @@ triggers:
 | 0 需求明确 | 计划模式下聊清需求，产出 7 份立项文档 + 《需求确认单》 | [references/clarify.md](references/clarify.md) | 用户确认需求单 |
 | 1 Harness 就位 | 五角色 + 五道门禁 + 文件交接就位 | [references/harness.md](references/harness.md) | 流程就位确认 |
 | 2 进度记忆 | 初始化 PROGRESS.md 进度记忆 | [references/memory.md](references/memory.md) | 记忆就位 |
-| 3 迭代实施 | 每次只做一个 feature，过五道门禁 | [references/harness.md](references/harness.md) + [references/development-principles.md](references/development-principles.md) | 全部 feature 完成 |
+| 3 迭代实施 | 每次只做一个 feature，过五道门禁（含越界 + 五类失控检查，修不好会止损） | [references/harness.md](references/harness.md) + [references/development-principles.md](references/development-principles.md) | 全部 feature 完成 |
 | 4 质量打磨 | 去 AI 味，让成品像人做的 | [references/polish.md](references/polish.md) | 打磨清单全过 |
 | 5 发版评审 | 可选：多角色评审会 | [references/harness.md](references/harness.md) 发版评审会节 | 评审结论「可以发版」 |
 | 6 部署收尾 | 部署 + 汇报收尾 | [references/development-principles.md](references/development-principles.md) | 用户确认满意 |
@@ -76,7 +76,7 @@ triggers:
 |---|---|
 | 「需求确认了，开始吧」 | 退出计划模式 → 阶段 1 |
 | 「接着做上次的项目」 | 先读 PROGRESS.md → 两三句报告进度/关键决定/下一步 → 从断点阶段继续 |
-| 「这里有个 bug」 | 修 bug 固定路径（harness.md）：先复现 → 修根因 → 同用例转绿 |
+| 「这里有个 bug」 | 修 bug 固定路径（harness.md）：先复现 → 修根因 → 同用例转绿；连修 2 轮没好就止损重估 |
 | 「发版吧」 | 阶段 5 评审 → 阶段 6 重要操作前三问确认 → 部署 |
 | 「改个文案/调个样式」 | 小改动直达，不走全流程 |
 
@@ -128,8 +128,8 @@ triggers:
 
 ## 版本与作者
 
-- 版本：1.5.0（结构重构：主技能瘦身为「导航 + 分级 + 衔接表」，每个阶段拆出独立子技能文件——阶段 0 → clarify.md、阶段 4 → polish.md，做到哪读哪、token 更省；新增任务分级（小改动直达/中途升级）与阶段衔接表；吸收四项执行纪律：测试节奏分层、修 bug 先复现、越界检查、重要操作前三问；规则沉淀严进常删进收尾）
-- 前版本：1.3.0（阶段 0 新增 yy-ui-first-webgen 视觉定稿路由询问；阶段 0 默认计划模式；需求澄清技能「检测 → 安装 → 调用」强制保障；技术选型前必须先做 GitHub 方案调研）
+- 版本：1.6.0（吸收长周期 AI 开发实战思想：审查员新增五类失控检查——样式碎片化/硬编码/重复造轮/冗余残留/文档过期；修 bug 路径新增第 4 步止损（连修 2 轮失败即重估）；发版四卡点硬约束（版本号/CHANGELOG/全量绿/回滚方案）；人机测试分工与多模型交叉评审（可选增强）；polish 新增设计一致性盘点、收尾新增文档巡检与兜底模式）
+- 前版本：1.5.0（结构重构：主技能瘦身为「导航 + 分级 + 衔接表」，每阶段拆出独立子技能文件——阶段 0 → clarify.md、阶段 4 → polish.md；任务分级、测试节奏分层、越界检查、重要操作前三问、规则沉淀严进常删）
 - 作者：ivercurry99
 - 协议：MIT
 - 升级兼容：新增 references 文件与导航结构，对已有使用方式 100% 向后兼容。

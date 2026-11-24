@@ -54,6 +54,7 @@ $ python scripts/scaffold_project.py validate ../workspace/my-site
 | 需求没说清就开始写代码，越写越偏 | 立项阶段先产出 7 份文档；信息不全时用默认值补齐并说明假设，不反复追问 |
 | AI 自己写的代码自己测，问题发现不了 | 五个角色分开：架构师 / 开发者 / 测试员 / 审查员 / 调度员，测试员不兼开发者 |
 | 换个会话就忘了之前做到哪 | 进度写入 PROGRESS.md，任何会话先读这个文件再继续，不依赖聊天记录 |
+| 项目越写越乱：样式各写各的、重复造轮、参数写死、文档过期 | 审查员逐类查五类失控；打磨阶段盘点设计清单统一样式；功能变化后文档巡检同步 |
 
 ## 工作方式
 
@@ -139,7 +140,7 @@ python scripts/scaffold_project.py validate ../workspace/my-personal-site
 | [references/fallback-strategy.md](references/fallback-strategy.md) | 能力降级策略 |
 | [references/prompt-engineering.md](references/prompt-engineering.md) | 各阶段结构化 Prompt 模板 |
 | [references/model-agent-matrix.md](references/model-agent-matrix.md) | 模型档位适配矩阵 + 回归红线 + 故障修复 |
-| [evals/evals.json](evals/evals.json) | 5 条核心评估用例 |
+| [evals/evals.json](evals/evals.json) | 6 条核心评估用例 |
 
 ## License
 

@@ -2,7 +2,7 @@
 name: yy-vibe-coding-genie
 description: 帮助小白用户用一句提示词快速 vibe coding 一个完整项目。自动处理需求明确、Harness 工程规范（五角色分工、五道门禁、文件交接）、进度记忆、迭代开发、质量打磨、版本管理和部署，用户只需说"我想做什么"。当用户说"帮我做个项目/网站/App""vibe coding""我想做一个XXX"或描述了一个想做的项目但不知从何下手时使用。不要用于单个小功能修改、纯技术咨询、或已有成熟开发流程的团队协作。
 license: MIT
-version: 1.6.0
+version: 1.6.1
 author: ivercurry99
 compatibility: 核心流程只依赖「读写文件、提问、执行命令」三种通用能力，不依赖任何特定 Agent 宿主的专有功能。子智能体、记忆系统、特定技能均为可选增强，缺失时自动降级到等价方案；无论 S/A/B/C 任何模型档位都能跑出稳定结果。
 triggers:
@@ -82,13 +82,10 @@ triggers:
 
 ## 资源导航
 
+各阶段的子技能文件见上方执行流程表，做到该阶段才读。全局参考：
+
 | 需要什么 | 读哪里 |
 |---------|--------|
-| 需求澄清流程（阶段 0） | [references/clarify.md](references/clarify.md) |
-| Harness 规范（五角色/门禁/交接） | [references/harness.md](references/harness.md) |
-| 进度记忆纪律 | [references/memory.md](references/memory.md) |
-| 底层开发思维 + 版本管理 | [references/development-principles.md](references/development-principles.md) |
-| 质量打磨去 AI 味（阶段 4） | [references/polish.md](references/polish.md) |
 | 多模型 / 多 Agent 降级策略 | [references/fallback-strategy.md](references/fallback-strategy.md) |
 | 结构化 Prompt 模板（弱模型也能走） | [references/prompt-engineering.md](references/prompt-engineering.md) |
 | 模型 & Agent 适配矩阵 + 回归红线 | [references/model-agent-matrix.md](references/model-agent-matrix.md) |
@@ -112,9 +109,7 @@ triggers:
 
 ## 稳定与恢复
 
-- 每个阶段结束都留一个「可继续」的明确状态（文件 + 进度记录）。
-- 出错时：先定位失败阶段 → 说明原因和影响 → 给出恢复步骤 → 只重做失败部分。
-- 不静默吞错误：有问题如实报告，报告简短、给出下一步。
+每阶段结束留一个「可继续」的明确状态（文件 + 进度记录）；出错只重做失败阶段、不静默吞错——报告简短、给出下一步。
 
 ## 完成标准
 
@@ -128,8 +123,6 @@ triggers:
 
 ## 版本与作者
 
-- 版本：1.6.0（吸收长周期 AI 开发实战思想：审查员新增五类失控检查——样式碎片化/硬编码/重复造轮/冗余残留/文档过期；修 bug 路径新增第 4 步止损（连修 2 轮失败即重估）；发版四卡点硬约束（版本号/CHANGELOG/全量绿/回滚方案）；人机测试分工与多模型交叉评审（可选增强）；polish 新增设计一致性盘点、收尾新增文档巡检与兜底模式）
-- 前版本：1.5.0（结构重构：主技能瘦身为「导航 + 分级 + 衔接表」，每阶段拆出独立子技能文件——阶段 0 → clarify.md、阶段 4 → polish.md；任务分级、测试节奏分层、越界检查、重要操作前三问、规则沉淀严进常删）
+- 版本：1.6.1（版本历史见 GitHub Releases）
 - 作者：ivercurry99
 - 协议：MIT
-- 升级兼容：新增 references 文件与导航结构，对已有使用方式 100% 向后兼容。

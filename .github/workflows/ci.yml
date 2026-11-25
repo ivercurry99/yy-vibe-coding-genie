@@ -47,13 +47,16 @@ jobs:
           assert 'name:' in skill and 'description:' in skill, '缺少必填 frontmatter'
           desc = next((ln for ln in skill.splitlines() if ln.lstrip().startswith('description:')), '')
           assert len(desc) >= 40, 'description 必须同时描述「做什么 + 什么时候用」'
-          # references 目录文件齐全
+          # skills 目录子技能 + references 全局参考齐全
           for must in (
-              'harness.md','memory.md','development-principles.md',
+              'yy-clarify','yy-harness','yy-memory','yy-dev','yy-polish',
+          ):
+              assert (root/'skills'/must/'SKILL.md').is_file(), f'缺少 skills/{must}/SKILL.md'
+          for must in (
               'fallback-strategy.md','prompt-engineering.md','model-agent-matrix.md',
           ):
               assert (root/'references'/must).is_file(), f'缺少 references/{must}'
-          print('SKILL 元数据 + references 齐全 ✅')
+          print('SKILL 元数据 + skills/ + references/ 齐全 ✅')
           PY
 
       - name: CLI dry-run smoke test (scaffold + validate round-trip)

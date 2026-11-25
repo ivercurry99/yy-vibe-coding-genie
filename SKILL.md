@@ -2,7 +2,7 @@
 name: yy-vibe-coding-genie
 description: 帮助小白用户用一句提示词快速 vibe coding 一个完整项目。自动处理需求明确、Harness 工程规范（五角色分工、五道门禁、文件交接）、进度记忆、迭代开发、质量打磨、版本管理和部署，用户只需说"我想做什么"。当用户说"帮我做个项目/网站/App""vibe coding""我想做一个XXX"或描述了一个想做的项目但不知从何下手时使用。不要用于单个小功能修改、纯技术咨询、或已有成熟开发流程的团队协作。
 license: MIT
-version: 1.6.1
+version: 1.7.0
 author: ivercurry99
 compatibility: 核心流程只依赖「读写文件、提问、执行命令」三种通用能力，不依赖任何特定 Agent 宿主的专有功能。子智能体、记忆系统、特定技能均为可选增强，缺失时自动降级到等价方案；无论 S/A/B/C 任何模型档位都能跑出稳定结果。
 triggers:
@@ -56,17 +56,17 @@ triggers:
 
 ## 执行流程（每阶段一个子技能，做到才读）
 
-收到项目信息后，严格按顺序走。每个阶段有独立的子技能文件——**做到该阶段才读对应文件**，不一次性全量加载：
+收到项目信息后，严格按顺序走。五个阶段子技能在 `skills/` 目录（各带 frontmatter，可单独安装），**做到该阶段才读对应文件**，不一次性全量加载；每个子技能尾部都写了「下一步」去哪，跟着走全程不断线：
 
 | 阶段 | 做什么 | 子技能 | 停止点 |
 |---|---|---|---|
-| 0 需求明确 | 计划模式下聊清需求，产出 7 份立项文档 + 《需求确认单》 | [references/clarify.md](references/clarify.md) | 用户确认需求单 |
-| 1 Harness 就位 | 五角色 + 五道门禁 + 文件交接就位 | [references/harness.md](references/harness.md) | 流程就位确认 |
-| 2 进度记忆 | 初始化 PROGRESS.md 进度记忆 | [references/memory.md](references/memory.md) | 记忆就位 |
-| 3 迭代实施 | 每次只做一个 feature，过五道门禁（含越界 + 五类失控检查，修不好会止损） | [references/harness.md](references/harness.md) + [references/development-principles.md](references/development-principles.md) | 全部 feature 完成 |
-| 4 质量打磨 | 去 AI 味，让成品像人做的 | [references/polish.md](references/polish.md) | 打磨清单全过 |
-| 5 发版评审 | 可选：多角色评审会 | [references/harness.md](references/harness.md) 发版评审会节 | 评审结论「可以发版」 |
-| 6 部署收尾 | 部署 + 汇报收尾 | [references/development-principles.md](references/development-principles.md) | 用户确认满意 |
+| 0 需求明确 | 计划模式下聊清需求，产出 7 份立项文档 + 《需求确认单》 | [skills/yy-clarify/SKILL.md](skills/yy-clarify/SKILL.md) | 用户确认需求单 |
+| 1 Harness 就位 | 五角色 + 五道门禁 + 文件交接就位 | [skills/yy-harness/SKILL.md](skills/yy-harness/SKILL.md) | 流程就位确认 |
+| 2 进度记忆 | 初始化 PROGRESS.md 进度记忆 | [skills/yy-memory/SKILL.md](skills/yy-memory/SKILL.md) | 记忆就位 |
+| 3 迭代实施 | 每次只做一个 feature，过五道门禁（含越界 + 五类失控检查，修不好会止损） | [skills/yy-harness/SKILL.md](skills/yy-harness/SKILL.md) + [skills/yy-dev/SKILL.md](skills/yy-dev/SKILL.md) | 全部 feature 完成 |
+| 4 质量打磨 | 去 AI 味，让成品像人做的 | [skills/yy-polish/SKILL.md](skills/yy-polish/SKILL.md) | 打磨清单全过 |
+| 5 发版评审 | 可选：多角色评审会 | [skills/yy-harness/SKILL.md](skills/yy-harness/SKILL.md) 发版评审会节 | 评审结论「可以发版」 |
+| 6 部署收尾 | 部署 + 汇报收尾 | [skills/yy-dev/SKILL.md](skills/yy-dev/SKILL.md) | 用户确认满意 |
 
 7 份立项文档：立项说明、功能清单、项目管理档案、推进计划、技术栈选型、项目架构、项目级工程规范。按工业级标准。有新想法自己定，但先告诉用户确认，不擅自扩大范围。
 
@@ -82,7 +82,7 @@ triggers:
 
 ## 资源导航
 
-各阶段的子技能文件见上方执行流程表，做到该阶段才读。全局参考：
+五个阶段子技能见上方执行流程表（`skills/` 目录，做到才读）。全局参考（`references/` 目录）：
 
 | 需要什么 | 读哪里 |
 |---------|--------|
@@ -123,6 +123,6 @@ triggers:
 
 ## 版本与作者
 
-- 版本：1.6.1（版本历史见 GitHub Releases）
+- 版本：1.7.0（结构升级为技能集合：五个阶段子技能迁入 `skills/` 目录，各带独立 frontmatter 可单独安装；`references/` 保留三个全局参考；每个子技能尾部统一加「下一步」衔接，全程无断点）
 - 作者：ivercurry99
 - 协议：MIT

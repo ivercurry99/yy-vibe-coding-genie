@@ -131,15 +131,15 @@ python scripts/scaffold_project.py validate ../workspace/my-personal-site
 
 | 文档 | 内容 |
 |---|---|
-| [SKILL.md](./SKILL.md) | 技能本体：定位、任务分级、阶段导航、衔接表、鲁棒性规则 |
-| [references/clarify.md](references/clarify.md) | 阶段 0 子技能：计划模式需求澄清、brainstorming 调用、GitHub 调研、需求确认单 |
-| [references/harness.md](references/harness.md) | 五角色 / 五道门禁 / 文件交接 / 测试节奏 / 修 bug 路径 / 发版评审 |
-| [references/memory.md](references/memory.md) | 进度记忆纪律：同步、恢复、压缩 |
-| [references/development-principles.md](references/development-principles.md) | 开发思维：开源复用、版本管理、部署、重要操作前三问 |
-| [references/polish.md](references/polish.md) | 阶段 4 子技能：去 AI 味 6 项检查清单与打磨原则 |
-| [references/fallback-strategy.md](references/fallback-strategy.md) | 能力降级策略 |
-| [references/prompt-engineering.md](references/prompt-engineering.md) | 各阶段结构化 Prompt 模板 |
-| [references/model-agent-matrix.md](references/model-agent-matrix.md) | 模型档位适配矩阵 + 回归红线 + 故障修复 |
+| [SKILL.md](./SKILL.md) | 主导航：定位、任务分级、七阶段路由、衔接表、鲁棒性规则 |
+| [skills/yy-clarify/SKILL.md](skills/yy-clarify/SKILL.md) | 阶段 0 子技能：计划模式需求澄清、brainstorming 调用、GitHub 调研、需求确认单 |
+| [skills/yy-harness/SKILL.md](skills/yy-harness/SKILL.md) | 阶段 1/3/5 子技能：五角色 / 五道门禁 / 测试节奏 / 修 bug 路径 / 发版四卡点 |
+| [skills/yy-memory/SKILL.md](skills/yy-memory/SKILL.md) | 阶段 2 子技能：进度记忆纪律——同步、恢复、压缩 |
+| [skills/yy-dev/SKILL.md](skills/yy-dev/SKILL.md) | 阶段 3/6 子技能：开发思维、版本管理、部署、重要操作前三问 |
+| [skills/yy-polish/SKILL.md](skills/yy-polish/SKILL.md) | 阶段 4 子技能：去 AI 味 6 项清单与设计一致性盘点 |
+| [references/fallback-strategy.md](references/fallback-strategy.md) | 全局：能力降级策略 |
+| [references/prompt-engineering.md](references/prompt-engineering.md) | 全局：各阶段结构化 Prompt 模板 |
+| [references/model-agent-matrix.md](references/model-agent-matrix.md) | 全局：模型档位适配矩阵 + 回归红线 + 故障修复 |
 | [evals/evals.json](evals/evals.json) | 6 条核心评估用例 |
 
 ## License
